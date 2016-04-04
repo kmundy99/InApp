@@ -2,21 +2,19 @@
 
 /* Controllers */
 
-var phonecatControllers = angular.module('phonecatControllers', []);
+var integrationControllers = angular.module('integrationControllers', []);
 
-phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
-  function($scope, Phone) {
-    $scope.phones = Phone.query();
-    $scope.orderProp = 'age';
+integrationControllers.controller('appListCtrl', ['$scope', '$http',
+  function($scope, $http) {
+   $http.get('apps/apps.json').success(function(data) { 
+	$scope.apps = data;
+    }); 
+
+    $scope.orderProp = 'lastUpdatedDate';
   }]);
 
-phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',
-  function($scope, $routeParams, Phone) {
-    $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function(phone) {
-      $scope.mainImageUrl = phone.images[0];
-    });
-
-    $scope.setImage = function(imageUrl) {
-      $scope.mainImageUrl = imageUrl;
-    };
+integrationControllers.controller('appDetailCtrl', ['$scope', '$routeParams', '$http',
+  function($scope, $routeParams, $http) {
+    $http.get('apps/$routeParams.appId.json').success(function(data) {
+	  $scope.apps_detail = data; });
   }]);

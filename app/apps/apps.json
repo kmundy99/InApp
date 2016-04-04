@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1", 
+        "name": "Taleo to Fusion HCM",
+		"lastRun": "",	
+		"createdBy": "Kiran Mundy",
+		"lastUpdated": "3/2/2016",
+		"schedule": "Every 2 hours"
+    },     
+	{
+        "id": "2", 
+        "name": "Fusion HCM to AD",
+		"lastRun": "",	
+		"createdBy": "Jasbir Mundy",
+		"lastUpdated": "1/2/2016",
+		"schedule": "Every Night"
+    },     
+	{
+        "id": "3", 
+        "name": "Fusion HCM to Learn",
+		"lastRun": "",	
+		"createdBy": "Joost Vlassak",
+		"lastUpdated": "1/9/2016",
+		"schedule": "Every 20 mins"
+    }
+]

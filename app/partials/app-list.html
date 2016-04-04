@@ -6,24 +6,24 @@
       Search: <input ng-model="query">
       Sort by:
       <select ng-model="orderProp">
-        <option value="name">Alphabetical</option>
-        <option value="age">Newest</option>
+        <option value="name">Created By</option>
+        <option value="lastUpdated">Last Updated</option>
       </select>
 
     </div>
     <div class="col-md-10">
       <!--Body content-->
-
       <table class="table">
 	  <tr>
 	  <th>Number</th>
 	  <th>Name</th>
 	  <th>Last Run</th>
 	  <th>Created By</th>
+	  <th>Last Updated</th>
 	  <th>Schedule</th>
  	  </tr>
 	  <tr ng-repeat="app in apps | filter:query | orderBy:orderProp">
-	       <a href="#">  <td ng-repeat="value in app">{{value}}<td></a>
+	       <td ng-repeat="value in app"><a href="#">{{value}}</a><td> 
 	</tr>
       </table>
 
